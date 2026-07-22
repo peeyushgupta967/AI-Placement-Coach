@@ -11,7 +11,9 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME,
     ssl: {
         ca: fs.readFileSync(
-            path.join(__dirname, "ca.pem")
+            process.env.RENDER
+                ? "/etc/secrets/ca.pem"
+                : path.join(__dirname, "ca.pem")
         )
     }
 
