@@ -493,10 +493,10 @@ function Resume() {
 
     };
 
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-
-    const resumeUrl = profile?.resume
-        ? `http://localhost:5000/${profile.resume.replace(/\\/g, "/")}`
+    const resumeUrl = profile.resume
+        ? `${API_URL}/${profile.resume.replace(/\\/g, "/")}`
         : "";
 
         if (loading) {

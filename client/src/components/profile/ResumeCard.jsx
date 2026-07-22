@@ -8,9 +8,10 @@ import {
 } from "lucide-react";
 
 function ResumeCard({ profile, onDelete }) {
-
+    const API_URL =
+        import.meta.env.VITE_API_URL || "http://localhost:5000";
     const resumeUrl = profile.resume
-        ? `http://localhost:5000/${profile.resume.replace(/\\/g, "/")}`
+        ? `${API_URL}/${profile.resume.replace(/\\/g, "/")}`
         : "";
 
     return (
