@@ -28,3 +28,6 @@ server/.env
 *.njsproj
 *.sln
 *.sw?
+
+# Aiven certificate
+server/config/ca.pem
